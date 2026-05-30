@@ -1,10 +1,9 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
-import { state } from "./state.js";
 import {
   getFirestore,
   doc,
   setDoc,
-  getDoc
+  getDoc,
+  deleteDoc // <--- Add this one
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
 // ===============================
@@ -178,12 +177,19 @@ async function loadPlayersFromFirebase() {
   }
 }
 
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-database.js"; // Ensure path matches your version
-
+// ===============================
+// 🗑️ RESET CLOUD DATA (Firestore version)
+// ===============================
 async function resetCloudData() { 
-  const db = getDatabase();
-  const auctionRef = ref(db, 'auction'); 
-  return set(auctionRef, null);
+  try {
+    // This deletes the document "default_auction" from the "auctions" collection
+    await deleteDoc(AUCTION_DOC);
+    console.log("🗑️ Cloud document deleted successfully");
+    return true;
+  } catch (err) {
+    console.error("❌ Failed to delete cloud data:", err);
+    return false;
+  }
 }
 
 export {
@@ -191,5 +197,5 @@ export {
   loadAuctionFromCloud,
   uploadPlayersToCloud,
   loadPlayersFromFirebase,
-  resetCloudData
+  resetCloudData // This makes it available to renderer.js
 };
