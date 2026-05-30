@@ -43,9 +43,16 @@ if (uploadBtn) {
       return;
     }
 
-    if (state.sales.length > 0 || state.current) {
-      alert("⚠️ Cannot import after auction has started");
+    // Allow import if mode is 'replace' (with a confirmation)
+    if (mode === "append" && (state.sales.length > 0 || state.current)) {
+      alert("⚠️ Cannot append players after auction has started. Use 'Replace All' to restart.");
       return;
+    }
+    
+    if (mode === "replace" && (state.sales.length > 0 || state.current)) {
+      if (!confirm("⚠️ Auction has started. 'Replace All' will wipe all current progress. Proceed?")) {
+        return;
+      }
     }
 
     try {
