@@ -1,5 +1,6 @@
 import { state } from './state.js';
 import { fmt, catLabel } from './utils.js';
+import { resetCloudData } from './firebase.js';
 import {
   placeBid,
   nextPlayer,
@@ -807,34 +808,30 @@ export function wireEvents() {
   });
 
   // Reset auction
-  dom.btnResetAll.addEventListener('click', async () => {
+    dom.btnResetAll.addEventListener('click', async () => {
     if (!confirm('Reset the entire auction? This will wipe Cloud and Local data.')) return;
   
-    cancelTimer();
+    // Stop any timers
+    if (typeof cancelTimer === 'function') cancelTimer();
     
-    // 1. Clear Local Storage
-    localStorage.removeItem(AUTOSAVE_KEY);
-  
-    // 2. Clear the State object in memory (CRITICAL)
+    // 1. Wipe the memory (This fixes the "Cannot Import" error)
     state.sales = [];
     state.current = null;
     state.history = [];
+    // Reset pools to empty
+    state.pools = { X: [], P: [], A: [], B: [], UNSOLD: [] };
   
-    // 3. Clear Firebase Cloud Data
-    // We call a helper from firebase.js (we will create this in the next step)
-    try {
-      const { resetCloudData } = await import('./firebase.js');
-      await resetCloudData();
-      
-      // 4. Reload initial data from JSON
-      await loadAuctionData();
-      
-      alert("System fully reset. You can now upload players.");
-      renderAll();
-    } catch (err) {
-      console.error("Cloud reset failed:", err);
-      alert("Reset failed to sync with cloud.");
-    }
+    // 2. Clear Local Storage (Ghosting fix)
+    localStorage.removeItem("auction_autosave"); // Check your AUTOSAVE_KEY name
+  
+    // 3. Wipe the Cloud (Firestore fix)
+    await resetCloudData();
+  
+    // 4. Force UI to update
+    renderAll();
+    
+    alert("System fully reset. Please refresh the page before uploading new players.");
+    window.location.reload(); 
   });
 
   // Bid step change should re-render bid buttons
