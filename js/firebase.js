@@ -178,9 +178,19 @@ async function loadPlayersFromFirebase() {
   }
 }
 
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.x.x/firebase-database.js"; // Ensure path matches your version
+
+export async function resetCloudData() {
+  const db = getDatabase();
+  const auctionRef = ref(db, 'auction_state'); // Use the same key your load/save uses
+  // Setting to null or an empty object wipes the cloud entry
+  return set(auctionRef, null);
+}
+
 export {
   saveAuctionToCloud,
   loadAuctionFromCloud,
   uploadPlayersToCloud,
-  loadPlayersFromFirebase
+  loadPlayersFromFirebase,
+  resetCloudData
 };
