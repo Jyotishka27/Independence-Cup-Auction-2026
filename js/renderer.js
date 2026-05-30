@@ -808,12 +808,33 @@ export function wireEvents() {
 
   // Reset auction
   dom.btnResetAll.addEventListener('click', async () => {
-    if (!confirm('Reset the entire auction? This cannot be undone.')) return;
-
+    if (!confirm('Reset the entire auction? This will wipe Cloud and Local data.')) return;
+  
     cancelTimer();
+    
+    // 1. Clear Local Storage
     localStorage.removeItem(AUTOSAVE_KEY);
-    await loadAuctionData();
-    renderAll();
+  
+    // 2. Clear the State object in memory (CRITICAL)
+    state.sales = [];
+    state.current = null;
+    state.history = [];
+  
+    // 3. Clear Firebase Cloud Data
+    // We call a helper from firebase.js (we will create this in the next step)
+    try {
+      const { resetCloudData } = await import('./firebase.js');
+      await resetCloudData();
+      
+      // 4. Reload initial data from JSON
+      await loadAuctionData();
+      
+      alert("System fully reset. You can now upload players.");
+      renderAll();
+    } catch (err) {
+      console.error("Cloud reset failed:", err);
+      alert("Reset failed to sync with cloud.");
+    }
   });
 
   // Bid step change should re-render bid buttons
