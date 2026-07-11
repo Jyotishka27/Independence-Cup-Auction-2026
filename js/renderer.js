@@ -486,8 +486,9 @@ function saveRulesFromUI() {
 
   });
 
-  saveState();
-
+  autoSaveState();
+  renderAll();
+  
   alert("Rules saved successfully.");
 
 }
