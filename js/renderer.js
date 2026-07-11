@@ -442,6 +442,45 @@ function renderRules() {
   });
 }
 
+function saveRulesFromUI() {
+
+  if (!state.rules) return;
+
+  state.rules.minPlayersPerTeam =
+    Number(dom.ruleMinPlayersPerTeam.value) || 0;
+
+  state.rules.maxPlayersPerTeam =
+    Number(dom.ruleMaxPlayersPerTeam.value) || 0;
+
+  Object.keys(state.rules.pools).forEach(poolId => {
+
+    state.rules.pools[poolId].mandatory =
+      document.querySelector(
+        `[data-rule-pool-mandatory="${poolId}"]`
+      ).checked;
+
+    state.rules.pools[poolId].min =
+      Number(
+        document.querySelector(
+          `[data-rule-pool-min="${poolId}"]`
+        ).value
+      ) || 0;
+
+    state.rules.pools[poolId].max =
+      Number(
+        document.querySelector(
+          `[data-rule-pool-max="${poolId}"]`
+        ).value
+      ) || 0;
+
+  });
+
+  saveState();
+
+  alert("Rules saved successfully.");
+
+}
+
 // ===============================
 // Category UI
 // ===============================
