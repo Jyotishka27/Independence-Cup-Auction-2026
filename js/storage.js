@@ -134,7 +134,8 @@ export function saveState() {
       skipped: state.skipped,
       current: state.current,
       teams: state.teams,
-      sales: state.sales
+      sales: state.sales,
+      rules: state.rules
     },
     savedAt: new Date().toISOString(),
     note: 'Football Auctioneer snapshot'
@@ -170,13 +171,14 @@ export function loadState(fileList) {
       }
 
       Object.assign(state, {
-        category: data.state.category,
-        pools: data.state.pools,
-        skipped: data.state.skipped,
-        current: data.state.current,
-        teams: data.state.teams,
-        sales: data.state.sales,
-        timer: { handle: null, left: 0, running: false }
+          category: data.state.category,
+          pools: data.state.pools,
+          skipped: data.state.skipped,
+          current: data.state.current,
+          teams: data.state.teams,
+          sales: data.state.sales,
+          rules: data.state.rules,
+          timer: { handle: null, left: 0, running: false }
       });
 
       cancelTimer();
