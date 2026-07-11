@@ -1,6 +1,17 @@
 import { state } from './state.js';
 import { fmt, catLabel } from './utils.js';
 import { resetCloudData } from './firebase.js';
+
+import {
+  saveState,
+  loadState,
+  exportCSV
+} from './storage.js';
+
+import {
+  autoSaveState
+} from './autosave.js';
+
 import {
   placeBid,
   nextPlayer,
