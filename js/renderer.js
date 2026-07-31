@@ -1,6 +1,7 @@
 import { state } from './state.js';
 import { fmt, catLabel } from './utils.js';
 import { resetCloudData } from './firebase.js';
+import { AUTOSAVE_KEY } from "./config.js";
 
 import {
   saveState,
@@ -873,7 +874,7 @@ export function wireEvents() {
     state.pools = { X: [], P: [], A: [], B: [], UNSOLD: [] };
   
     // 2. Clear Local Storage (Ghosting fix)
-    localStorage.removeItem("auction_autosave"); // Check your AUTOSAVE_KEY name
+    localStorage.removeItem(AUTOSAVE_KEY); // Check your AUTOSAVE_KEY name
   
     // 3. Wipe the Cloud (Firestore fix)
     await resetCloudData();
