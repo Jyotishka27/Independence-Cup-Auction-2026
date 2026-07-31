@@ -18,10 +18,10 @@ import { state } from './state.js';
     console.warn("Cloud restore skipped:", err);
   }
 
-  if (!restored) {
-    restoreAutoSavedState();
-    console.log("After LocalStorage:", state.teams);
-  }
+  //if (!restored) {
+  //  restoreAutoSavedState();
+  //  console.log("After LocalStorage:", state.teams);
+  //}
 
   wireEvents();
   renderAll();
