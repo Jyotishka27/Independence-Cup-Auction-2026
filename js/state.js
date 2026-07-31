@@ -6,13 +6,13 @@ export const state = {
   teams: [],
   sales: [],
   rules: {
-    minPlayersPerTeam: 4,
-    maxPlayersPerTeam: 5,
+    minPlayersPerTeam: 7,
+    maxPlayersPerTeam: 7,
     pools: {
-      X: { mandatory: true, min: 1, max: 2 },
-      P: { mandatory: true, min: 1, max: 2 },
-      A: { mandatory: true, min: 1, max: 2 },
-      B: { mandatory: true, min: 1, max: 2 }
+      X: { mandatory: false, min: 1, max: 2 },
+      P: { mandatory: false, min: 1, max: 2 },
+      A: { mandatory: false, min: 1, max: 2 },
+      B: { mandatory: false, min: 1, max: 2 }
     }
   },
   timer: { handle: null, left: 0, running: false },
