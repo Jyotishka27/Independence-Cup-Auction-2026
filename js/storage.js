@@ -46,6 +46,8 @@ export async function loadAuctionData() {
       const data = await response.json();
 
       state.teams = data.captains || [];
+
+      console.log("Teams loaded from JSON:", state.teams);
     }
 
     // ============================
