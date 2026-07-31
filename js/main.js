@@ -20,6 +20,7 @@ import { state } from './state.js';
 
   if (!restored) {
     restoreAutoSavedState();
+    console.log("After LocalStorage:", state.teams);
   }
 
   wireEvents();
