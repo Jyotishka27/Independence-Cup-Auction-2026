@@ -7,6 +7,8 @@ import { state } from './state.js';
 (async function initAuction() {
   await loadAuctionData();
 
+  console.log("After loadAuctionData:", state.teams);
+
   let restored = false;
 
   try {
@@ -85,6 +87,9 @@ if (uploadBtn) {
       alert("✅ Players uploaded!");
 
       await loadAuctionData();
+
+      console.log("After loadAuctionData:", state.teams);
+      
       renderAll();
 
     } catch (err) {
