@@ -13,6 +13,7 @@ import { state } from './state.js';
 
   try {
     restored = await loadAuctionFromCloud();
+    console.log("After Firebase:", state.teams);
   } catch (err) {
     console.warn("Cloud restore skipped:", err);
   }
