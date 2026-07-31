@@ -1,21 +1,11 @@
 {
   "captains": [
-    { "name": "RT SPORTS", "budget": 500000 },
-    { "name": "HEAD HUNTERS HOWRAH", "budget": 500000 },
-    { "name": "KSG & ASSOCIATES", "budget": 500000 },
-    { "name": "SUCCESS STRIKER", "budget": 500000 },
-    { "name": "CECON INDUSTRIES", "budget": 500000 },
-    { "name": "DALHOUSIE DYNAMITES", "budget": 500000 },
-    { "name": "RAJA CONSTRUCTION", "budget": 500000 },
-    { "name": "DGM SUPER CHALLENGER", "budget": 500000 },
-    { "name": "SHANTI SEA VIEW", "budget": 500000 },
-    { "name": "RED FIGHTER", "budget": 500000 },
-    { "name": "KKI", "budget": 500000 },
-    { "name": "MACARAV", "budget": 500000 },
-    { "name": "BAGULA YOUTH CLUB (BYC)", "budget": 500000 },
-    { "name": "BASUNDHARA BLASTERS", "budget": 500000 },
-    { "name": "PRESIDENT 26", "budget": 500000 },
-    { "name": "3S BANDO PVT LTD.", "budget": 500000 }
+    { "name": "Ritam Chowdhury", "budget": 500000 },
+    { "name": "Bikram", "budget": 500000 },
+    { "name": "Arghyadeep Das", "budget": 500000 },
+    { "name": "THOMAS JOSEPH", "budget": 500000 },
+    { "name": "Subhamoy Das", "budget": 500000 },
+    { "name": "Srinjoy kundu", "budget": 500000 },
   ],
   
   "players": {
