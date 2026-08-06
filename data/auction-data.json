@@ -19,10 +19,10 @@
       ],
     
     "P": [
-      { "id": "p1", "name": "Mr. Saranya Dey", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
-      { "id": "p2", "name": "Mr. Rajesh Dubey", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
-      { "id": "p3", "name": "Mr. Dip Chakraborty", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
-      { "id": "p4", "name": "Mr. Dilip L Vasani", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
+      { "id": "p1", "name": "Vasu Gupta", "position": "ST", "basePrice": 40000, "img": "./players/Vasu Gupta.png" },
+      { "id": "p2", "name": "China", "position": "CM", "basePrice": 40000, "img": "./players/China.png" },
+      { "id": "p3", "name": "Supratim Sengupta ", "position": "ST", "basePrice": 40000, "img": "./players/Supratim.png" },
+      { "id": "p4", "name": "Arjo", "position": "ST", "basePrice": 40000, "img": "./players/Arjo.png" },
       { "id": "p5", "name": "Mr. Laltu Kumar Das", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
       { "id": "p6", "name": "Mr. Dhiraj Kumar Trivedi", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
       { "id": "p7", "name": "Mr. Prabir Sinha Roy", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.png" },
