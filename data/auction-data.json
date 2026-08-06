@@ -13,7 +13,7 @@
       { "id": "x1", "name": "Arka Dutta", "position": "GK", "basePrice": 50000, "img": "./players/Arka Dutta.jpeg" },
       { "id": "x2", "name": "Addy", "position": "GK", "basePrice": 50000, "img": "./players/Addy.jpeg" },
       { "id": "x3", "name": "Arnab Talukdar", "position": "GK", "basePrice": 50000, "img": "./players/Arnab Talukdar.png" },
-      { "id": "x4", "name": "Rupayan", "position": "GK", "basePrice": 50000, "img": "./players/Rupayan.jpg" },
+      { "id": "x4", "name": "Rupayan", "position": "GK", "basePrice": 50000, "img": "./players/Rupayan Chakrabarty.jpg" },
       { "id": "x5", "name": "Shrish Mukherjee ", "position": "GK", "basePrice": 50000, "img": "./players/Shrish Mukherjee .webp" },
       { "id": "x6", "name": "Suman Kumir", "position": "PL", "basePrice": 50000, "img": "./players/Suman Kumir.jpeg" }
       ],
