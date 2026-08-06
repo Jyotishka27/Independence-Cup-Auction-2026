@@ -10,23 +10,12 @@
   
   "players": {
     "X": [
-      { "id": "x1", "name": "Vasu", "position": "ST", "basePrice": 50000, "img": "./players/vasu.png" },
-      { "id": "x2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 50000, "img": "./players/supratim.png" },
-      { "id": "x3", "name": "Arjo", "position": "ST", "basePrice": 50000, "img": "./players/arjo.png" },
-      { "id": "x4", "name": "Mr. Jahar Bagchi", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x5", "name": "Mr. Anindya Dutta", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x6", "name": "Mr. Rajat Kumar Singh", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x7", "name": "Mr. Niladri Das", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x8", "name": "Mr. Utpal Panda", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x9", "name": "Mr. Ayush Gupta", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x10", "name": "Mr. Kailash Nath Ghosh", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x11", "name": "Mr. Sujit Kumar Das", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x12", "name": "Mr. Arup Sunder Paul", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x13", "name": "Mr. Soumitra Majumdar", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x14", "name": "Mr. Manibrata Paul", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x15", "name": "Mr. Amitava Chatterjee", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x16", "name": "Mr. Krishna Kumar Kunwar", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x17", "name": "Mr. Tapan Chaki", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" }
+      { "id": "x1", "name": "Arka Dutta", "position": "GK", "basePrice": 50000, "img": "./players/Arka Dutta.png" },
+      { "id": "x2", "name": "Addy", "position": "GK", "basePrice": 50000, "img": "./players/Addy.png" },
+      { "id": "x3", "name": "Arnab Talukdar", "position": "GK", "basePrice": 50000, "img": "./players/Arnab Talukdar.png" },
+      { "id": "x4", "name": "Rupayan", "position": "GK", "basePrice": 50000, "img": "./players/Rupayan.png" },
+      { "id": "x5", "name": "Shrish Mukherjee ", "position": "GK", "basePrice": 50000, "img": "./players/Shrish Mukherjee .png" },
+      { "id": "x6", "name": "Suman Kumir", "position": "PL", "basePrice": 50000, "img": "./players/Suman Kumir.png" }
       ],
     
     "P": [
