@@ -7,6 +7,8 @@ import {
   deleteDoc // <--- Add this one
 } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 
+import { state } from "./state.js";
+
 // ===============================
 // 🔧 Firebase Config
 // ===============================
