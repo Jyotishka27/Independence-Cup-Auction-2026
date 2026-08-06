@@ -10,9 +10,9 @@
   
   "players": {
     "X": [
-      { "id": "x1", "name": "Mr. S Murali Krishnan", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x2", "name": "Mr. Rajib Kumar Biswas", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
-      { "id": "x3", "name": "Mr. Subhajit Saha", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
+      { "id": "x1", "name": "Vasu", "position": "ST", "basePrice": 50000, "img": "./players/vasu.png" },
+      { "id": "x2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 50000, "img": "./players/supratim.png" },
+      { "id": "x3", "name": "Arjo", "position": "ST", "basePrice": 50000, "img": "./players/arjo.png" },
       { "id": "x4", "name": "Mr. Jahar Bagchi", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
       { "id": "x5", "name": "Mr. Anindya Dutta", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
       { "id": "x6", "name": "Mr. Rajat Kumar Singh", "position": "PL", "basePrice": 50000, "img": "./players/defaultimage.png" },
