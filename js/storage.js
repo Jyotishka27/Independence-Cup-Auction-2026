@@ -36,7 +36,9 @@ export async function loadAuctionData() {
         state.pools[pool].push({
           id: player.id,
           name: player.name,
+          position: player.position || '',
           basePrice: player.basePrice,
+          img: player.img || './players/defaultimage.jpg',
           soldPrice: player.soldPrice || null,
           teamId: player.teamId || null
         });
