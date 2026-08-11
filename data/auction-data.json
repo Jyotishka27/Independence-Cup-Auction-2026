@@ -19,23 +19,14 @@
       ],
     
     "P": [
-      { "id": "p1", "name": "Vasu Gupta", "position": "ST", "basePrice": 40000, "img": "./players/Vasu Gupta.jpg" },
-      { "id": "p2", "name": "China", "position": "CM", "basePrice": 40000, "img": "./players/China.jpg" },
-      { "id": "p3", "name": "Supratim Sengupta ", "position": "ST", "basePrice": 40000, "img": "./players/Supratim.jpg" },
-      { "id": "p4", "name": "Arjo", "position": "ST", "basePrice": 40000, "img": "./players/Arjo.jpg" },
-      { "id": "p5", "name": "Mr. Laltu Kumar Das", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p6", "name": "Mr. Dhiraj Kumar Trivedi", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p7", "name": "Mr. Prabir Sinha Roy", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p8", "name": "Mr. Sanjib Ghosh", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p9", "name": "Mr. P K Bose", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p10", "name": "Mr. Surajit Lahiri", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p11", "name": "Mr. Ishwar Kumar Gupta", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p12", "name": "Mr. Saibal Sengupta", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p13", "name": "Mr. Santanu Kar", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p14", "name": "Mr. Pranab Sarkar", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p15", "name": "Mr. Amalendu Sekhar Roy", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p16", "name": "Mr. Gaurav Agarwal", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" },
-      { "id": "p17", "name": "Mr. Asim Banerjee", "position": "PL", "basePrice": 40000, "img": "./players/defaultimage.jpg" }
+      { "id": "p1", "name": "Vasu Gupta", "position": "ST", "basePrice": 40000, "img": "./players/p_vasu.jpg" },
+      { "id": "p2", "name": "China", "position": "CM", "basePrice": 40000, "img": "./players/p_china.jpg" },
+      { "id": "p3", "name": "Supratim Sengupta ", "position": "ST", "basePrice": 40000, "img": "./players/p_supratim.jpg" },
+      { "id": "p4", "name": "Arjo", "position": "ST", "basePrice": 40000, "img": "./players/p_arjo.jpg" },
+      { "id": "p5", "name": "Risove Show", "position": "PL", "basePrice": 40000, "img": "./players/p_rishov.jpg" },
+      { "id": "p6", "name": "Shrey Chandra Gupta", "position": "PL", "basePrice": 40000, "img": "./players/p_shrey.jpg" },
+      { "id": "p7", "name": "Nilanjan Chowdhury", "position": "PL", "basePrice": 40000, "img": "./players/p_nilanjan.jpg" },
+      { "id": "p8", "name": "Aniruddha Chakraborty", "position": "PL", "basePrice": 40000, "img": "./players/p_aniruddha.jpg" }
     ],
 
    "A": [
