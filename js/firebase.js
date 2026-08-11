@@ -112,9 +112,11 @@ function convertPlayersToPools(players) {
     if (!pools[pool]) pools[pool] = [];
 
     pools[pool].push({
-      id: `p_${Date.now()}_${index}`,
+      id: player.id || `p_${Date.now()}_${index}`,
       name: player.name,
+      position: player.position || "",
       basePrice: player.basePrice,
+      img: player.img || "./players/defaultimage.jpg",
       soldPrice: null,
       teamId: null
     });
