@@ -324,9 +324,7 @@ if (downloadBtn) {
     "click",
     () => {
 
-      const csv =
-        "id,player_name,position,pool,base_price,img\n";
-
+      const csv = "player_name,position,pool,base_price,img\n";
 
       const blob =
         new Blob(
