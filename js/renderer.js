@@ -684,7 +684,7 @@ export function renderCurrent() {
 
   dom.playerImg.src =
     player.img ||
-    'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop';
+    './players/defaultimage.jpg';
 
   dom.playerName.textContent =
     player.unsoldCount > 0
