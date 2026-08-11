@@ -10,12 +10,12 @@
   
   "players": {
     "X": [
-      { "id": "x1", "name": "Arka Dutta", "position": "GK", "basePrice": 50000, "img": "./players/Arka Dutta.jpeg" },
-      { "id": "x2", "name": "Addy", "position": "GK", "basePrice": 50000, "img": "./players/addy.jpeg" },
-      { "id": "x3", "name": "Arnab Talukdar", "position": "GK", "basePrice": 50000, "img": "./players/Arnab Talukdar.png" },
-      { "id": "x4", "name": "Rupayan", "position": "GK", "basePrice": 50000, "img": "./players/rupayan.jpg" },
-      { "id": "x5", "name": "Shrish Mukherjee ", "position": "GK", "basePrice": 50000, "img": "./players/Shrish Mukherjee .webp" },
-      { "id": "x6", "name": "Suman Kumir", "position": "PL", "basePrice": 50000, "img": "./players/Suman Kumir.jpeg" }
+      { "id": "x1", "name": "Arka Dutta", "position": "GK", "basePrice": 50000, "img": "./players/arka_gk.jpg" },
+      { "id": "x2", "name": "Addy", "position": "GK", "basePrice": 50000, "img": "./players/addy_gk.jpeg" },
+      { "id": "x3", "name": "Arnab Talukdar", "position": "GK", "basePrice": 50000, "img": "./players/arnab_gk.jpg" },
+      { "id": "x4", "name": "Rupayan", "position": "GK", "basePrice": 50000, "img": "./players/rupayan_gk.jpg" },
+      { "id": "x5", "name": "Shrish Mukherjee ", "position": "GK", "basePrice": 50000, "img": "./players/shrish_gk.jpg" },
+      { "id": "x6", "name": "Suman Kumir", "position": "PL", "basePrice": 50000, "img": "./players/suman_gk.jpg" }
       ],
     
     "P": [
