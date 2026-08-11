@@ -10,13 +10,13 @@ export function catLabel(cat) {
 }
 
 export function applyUnsoldReduction(player) {
+  
+  player.basePrice = UNSOLD_FIXED_PRICE;
   player.unsoldCount = (player.unsoldCount || 0) + 1;
   //player.basePrice = Math.max(
   //  Math.floor(player.basePrice * REDUCTION_FACTOR),
   //  MIN_PRICE
   //);
-
-  player.basePrice = UNSOLD_FIXED_PRICE;
 }
 
 export function showWarn(message) {
