@@ -1,8 +1,8 @@
 export const CATEGORY_LABELS = {
-  X: 'Elite (₹50000)',
-  P: 'Prime (₹40000)',
-  A: 'Core (₹30000)',
-  B: 'Developing (₹20000)',
+  X: 'Elite',
+  P: 'Prime',
+  A: 'Core',
+  B: 'Developing',
   UNSOLD: 'UnSold'
 };
 
