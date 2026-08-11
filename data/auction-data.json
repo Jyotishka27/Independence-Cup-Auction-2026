@@ -30,22 +30,14 @@
     ],
 
    "A": [
-      { "id": "a1", "name": "Mr. Pramir Ghosh", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a2", "name": "Mr. Chiranjib Bhattacharyya", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a3", "name": "Mr. Indranil Ray", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a4", "name": "Mr. Swapan Kumar Das", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a5", "name": "Mr. Ramesh Kumar Jaiswal", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a6", "name": "Mr. Amit Kumar Saha", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a7", "name": "Mr. Abhijt Dutta", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a8", "name": "Mr. Nabaneel Pradhan", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a9", "name": "Mr. Sirajul Haque", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a10", "name": "Mr. Dilip Bose", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a11", "name": "Mr. Anneshan Mukherjee", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a12", "name": "Mr. Prodip Koley", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a13", "name": "Mr. Raj Das", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a14", "name": "Mr. Debasish Mullick", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a15", "name": "Mr. Anup Kumar Paul", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" },
-      { "id": "a16", "name": "Mr. Tithankar Das", "position": "PL", "basePrice": 30000, "img": "./players/defaultimage.jpg" }
+      { "id": "a1", "name": "Sabyasachi Bose", "position": "PL", "basePrice": 30000, "img": "./players/a_sabyasachi.jpg" },
+      { "id": "a2", "name": "Jeff", "position": "PL", "basePrice": 30000, "img": "./players/a_jeff.jpg" },
+      { "id": "a3", "name": "Levin", "position": "PL", "basePrice": 30000, "img": "./players/a_levin.jpg" },
+      { "id": "a4", "name": "Dibyo", "position": "PL", "basePrice": 30000, "img": "./players/a_dibyo.jpg" },
+      { "id": "a5", "name": "Suvam Chakraborty", "position": "PL", "basePrice": 30000, "img": "./players/a_suvam.jpg" },
+      { "id": "a6", "name": "Ayon Roy", "position": "PL", "basePrice": 30000, "img": "./players/a_ayon.jpg" },
+      { "id": "a7", "name": "Siddhant": "PL", "basePrice": 30000, "img": "./players/a_tintin.jpg" },
+      { "id": "a8", "name": "Sayan Dhar", "position": "PL", "basePrice": 30000, "img": "./players/a_sayan.jpg" }
     ],
     
   "B": [
