@@ -226,31 +226,17 @@ function convertPlayersToPools(players) {
 // ===============================
 // Upload players from Excel → Firebase
 // ===============================
-async function uploadPlayersToCloud(
-  players,
-  mode = "replace"
-) {
-
+async function uploadPlayersToCloud(players, mode = "replace") {
   try {
-
     const snapshot = await getDoc(AUCTION_DOC);
-
-    const existing =
-      snapshot.exists()
-        ? snapshot.data()
-        : {};
-
-    // ===============================
-    // Determine player master list
-    // ===============================
+    const existing = snapshot.exists() ? snapshot.data() : {};
 
     let updatedPlayers = players;
 
-    if (
-      mode === "append" &&
-      Array.isArray(existing.players_master)
-    ) {
-
+    // ===============================
+    // Append mode
+    // ===============================
+    if (mode === "append" && Array.isArray(existing.players_master)) {
       updatedPlayers = [
         ...existing.players_master,
         ...players
@@ -258,39 +244,35 @@ async function uploadPlayersToCloud(
     }
 
     // ===============================
-    // Convert to auction pools
+    // Convert players to pools
     // ===============================
-
-    const pools =
-      convertPlayersToPools(updatedPlayers);
+    const pools = convertPlayersToPools(updatedPlayers);
 
     // ===============================
     // Preserve teams
     // ===============================
-
     const teams =
-      existing.teams ||
-      state.teams ||
-      [];
+      Array.isArray(existing.teams) && existing.teams.length > 0
+        ? existing.teams
+        : state.teams;
 
     // ===============================
-    // Build upload payload
+    // Preserve rules and UI
     // ===============================
+    const rules = existing.rules ?? state.rules;
+    const ui = existing.ui ?? state.ui;
 
-    const payload = {
-
-      // Master player database
+    // ===============================
+    // Build safe Firebase payload
+    // ===============================
+    const payload = cleanForFirestore({
       players_master: updatedPlayers,
-
-      // Runtime auction pools
       pools: pools,
 
-      // DO NOT overwrite teams
+      // IMPORTANT: preserve teams
       teams: teams,
 
-      // New auction state
       sales: [],
-
       skipped: {
         X: [],
         P: [],
@@ -301,45 +283,25 @@ async function uploadPlayersToCloud(
 
       current: null,
 
-      category: "X",
+      rules: rules,
+      ui: ui,
 
-      savedAt:
-        new Date().toISOString()
-    };
-
-    // Clean undefined values
-    const cleanedPayload =
-      cleanForFirestore(payload);
+      savedAt: new Date().toISOString()
+    });
 
     await setDoc(
       AUCTION_DOC,
-      cleanedPayload,
+      payload,
       { merge: true }
     );
 
-    console.log(
-      "✅ Players uploaded successfully"
-    );
-
-    console.log(
-      "👥 Teams preserved:",
-      teams
-    );
-
-    console.log(
-      "🖼️ Players uploaded:",
-      updatedPlayers.length
-    );
+    console.log("✅ Players uploaded successfully");
+    console.log("Teams preserved:", teams);
 
     return true;
 
   } catch (err) {
-
-    console.error(
-      "❌ Player upload failed:",
-      err
-    );
-
+    console.error("❌ Player upload failed:", err);
     return false;
   }
 }
