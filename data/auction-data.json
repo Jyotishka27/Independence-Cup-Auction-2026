@@ -39,7 +39,7 @@
       { "id": "a7", "name": "Sayan Dhar", "position": "PL", "basePrice": 30000, "img": "./players/a_sayan.jpg" },
       { "id": "a8", "name": "Hrishikesh", "position": "CM", "basePrice": 20000, "img": "./players/b_hrishi.jpg" },
       { "id": "a9", "name": "Arkapal Chakraborty", "position": "CM", "basePrice": 20000, "img": "./players/a_arkapal.jpg" },
-      { "id": "b10", "name": "Biswajit", "position": "CM", "basePrice": 20000, "img": "./players/a_biswajit.jpg" }
+      { "id": "a10", "name": "Biswajit", "position": "CM", "basePrice": 20000, "img": "./players/a_biswajit.jpg" }
     ],
     
   "B": [
