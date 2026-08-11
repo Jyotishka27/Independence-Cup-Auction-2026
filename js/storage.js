@@ -9,24 +9,55 @@ import { catLabel } from "./utils.js";
 // -------------------------------
 export async function loadAuctionData() {
   try {
+    // ============================
+    // 1. Load auction-data.json
+    // ============================
+    const response = await fetch("./data/auction-data.json");
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to load auction-data.json: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+
+    // ============================
+    // 2. Teams ALWAYS come from JSON
+    // ============================
+    state.teams = data.captains || [];
+
+    console.log("✅ Teams loaded from JSON:", state.teams);
+
+    // ============================
+    // 3. Try Firebase for players
+    // ============================
     let playersFromFirebase = [];
 
-    // 🔥 Try Firebase first
     try {
       playersFromFirebase = await loadPlayersFromFirebase();
     } catch (err) {
-      console.warn("Firebase load failed:", err);
+      console.warn("⚠️ Firebase player load failed:", err);
     }
 
     // ============================
-    // ✅ CASE 1: Firebase has data
+    // 4. Firebase has players
     // ============================
-    if (playersFromFirebase && playersFromFirebase.length > 0) {
+    if (
+      Array.isArray(playersFromFirebase) &&
+      playersFromFirebase.length > 0
+    ) {
       console.log("✅ Using Firebase player data");
 
-      state.pools = { X: [], P: [], A: [], B: [], UNSOLD: [] };
+      state.pools = {
+        X: [],
+        P: [],
+        A: [],
+        B: [],
+        UNSOLD: []
+      };
 
-      playersFromFirebase.forEach(player => {
+      playersFromFirebase.forEach((player) => {
         const pool = player.pool?.toUpperCase() || "UNSOLD";
 
         if (!state.pools[pool]) {
@@ -36,55 +67,69 @@ export async function loadAuctionData() {
         state.pools[pool].push({
           id: player.id,
           name: player.name,
-          position: player.position || '',
+          position: player.position || "",
           basePrice: player.basePrice,
-          img: player.img || './players/defaultimage.jpg',
+          img: player.img || "./players/defaultimage.jpg",
           soldPrice: player.soldPrice ?? null,
           teamId: player.teamId ?? null
         });
       });
 
-      const response = await fetch('./data/auction-data.json');
-      const data = await response.json();
-
-      state.teams = data.captains || [];
-
-      console.log("Teams loaded from JSON:", state.teams);
+      console.log("✅ Firebase players loaded:", playersFromFirebase.length);
     }
 
     // ============================
-    // ✅ CASE 2: Fallback to JSON
+    // 5. Firebase has NO players
+    //    → fallback to JSON players
     // ============================
     else {
-      console.log("📁 Using local JSON data");
+      console.log("📁 Using local JSON player data");
 
-      const response = await fetch('./data/auction-data.json');
-
-      if (!response.ok) {
-        throw new Error('Failed to load auction data');
-      }
-
-      const data = await response.json();
+      state.pools = {
+        X: [],
+        P: [],
+        A: [],
+        B: [],
+        UNSOLD: []
+      };
 
       if (data.players) {
-        Object.keys(data.players).forEach(cat => {
+        Object.keys(data.players).forEach((cat) => {
+          if (!state.pools[cat]) {
+            state.pools[cat] = [];
+          }
+
           state.pools[cat] = data.players[cat];
         });
       }
 
-      state.teams = data.captains || [];
+      console.log("✅ Local JSON players loaded");
     }
 
     // ============================
-    // 🔄 Reset runtime values
+    // 6. Reset runtime auction data
     // ============================
     state.sales = [];
-    state.skipped = { X: [], P: [], A: [], B: [], UNSOLD: [] };
-    state.current = null;
-    state.timer = { handle: null, left: 0, running: false };
 
+    state.skipped = {
+      X: [],
+      P: [],
+      A: [],
+      B: [],
+      UNSOLD: []
+    };
+
+    state.current = null;
+
+    state.timer = {
+      handle: null,
+      left: 0,
+      running: false
+    };
+
+    console.log("✅ Auction data initialization complete");
   } catch (err) {
-    console.error('Auction data load error:', err);
+    console.error("❌ Auction data load error:", err);
   }
 }
 
@@ -95,17 +140,32 @@ export function exportCSV() {
   const rows = [];
 
   state.teams.forEach((team, idx) => {
-    rows.push([`Team: ${team.name}`, '', '', '', '']);
-    rows.push(['Time', 'Player', 'Category', 'Position', 'Price']);
+    rows.push([
+      `Team: ${team.name}`,
+      "",
+      "",
+      "",
+      ""
+    ]);
 
-    const teamSales = state.sales.filter(s => s.teamIndex === idx);
+    rows.push([
+      "Time",
+      "Player",
+      "Category",
+      "Position",
+      "Price"
+    ]);
 
-    teamSales.forEach(sale => {
+    const teamSales = state.sales.filter(
+      (sale) => sale.teamIndex === idx
+    );
+
+    teamSales.forEach((sale) => {
       rows.push([
         sale.timeISO,
         sale.playerName,
         catLabel(sale.category),
-        sale.position || '',
+        sale.position || "",
         String(sale.price)
       ]);
     });
@@ -114,14 +174,27 @@ export function exportCSV() {
   });
 
   const csvContent = rows
-    .map(row => row.map(v => `"${String(v).replace(/"/g, '""')}"`).join(','))
-    .join('\n');
+    .map((row) =>
+      row
+        .map((value) =>
+          `"${String(value).replace(/"/g, '""')}"`
+        )
+        .join(",")
+    )
+    .join("\n");
 
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8' });
+  const blob = new Blob(
+    [csvContent],
+    {
+      type: "text/csv;charset=utf-8"
+    }
+  );
 
-  const link = document.createElement('a');
+  const link = document.createElement("a");
+
   link.href = URL.createObjectURL(blob);
-  link.download = 'auction-results-teamwise.csv';
+  link.download = "auction-results-teamwise.csv";
+
   document.body.appendChild(link);
   link.click();
   link.remove();
@@ -142,16 +215,21 @@ export function saveState() {
       rules: state.rules
     },
     savedAt: new Date().toISOString(),
-    note: 'Football Auctioneer snapshot'
+    note: "Football Auctioneer snapshot"
   };
 
-  const blob = new Blob([JSON.stringify(snapshot, null, 2)], {
-    type: 'application/json'
-  });
+  const blob = new Blob(
+    [JSON.stringify(snapshot, null, 2)],
+    {
+      type: "application/json"
+    }
+  );
 
-  const link = document.createElement('a');
+  const link = document.createElement("a");
+
   link.href = URL.createObjectURL(blob);
-  link.download = 'auction-state.json';
+  link.download = "auction-state.json";
+
   document.body.appendChild(link);
   link.click();
   link.remove();
@@ -162,6 +240,7 @@ export function saveState() {
 // -------------------------------
 export function loadState(fileList) {
   const file = fileList[0];
+
   if (!file) return;
 
   const reader = new FileReader();
@@ -171,18 +250,22 @@ export function loadState(fileList) {
       const data = JSON.parse(reader.result);
 
       if (!data || !data.state) {
-        throw new Error('Invalid auction state file.');
+        throw new Error("Invalid auction state file.");
       }
 
       Object.assign(state, {
-          category: data.state.category,
-          pools: data.state.pools,
-          skipped: data.state.skipped,
-          current: data.state.current,
-          teams: data.state.teams,
-          sales: data.state.sales,
-          rules: data.state.rules,
-          timer: { handle: null, left: 0, running: false }
+        category: data.state.category,
+        pools: data.state.pools,
+        skipped: data.state.skipped,
+        current: data.state.current,
+        teams: data.state.teams,
+        sales: data.state.sales,
+        rules: data.state.rules,
+        timer: {
+          handle: null,
+          left: 0,
+          running: false
+        }
       });
 
       cancelTimer();
