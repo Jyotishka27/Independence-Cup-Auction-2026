@@ -30,10 +30,33 @@ const AUCTION_DOC = doc(db, "auctions", "default_auction");
 
 
 // ===============================
-// 📦 Build payload (existing)
+// 🧹 Remove undefined values
+// ===============================
+function cleanForFirestore(value) {
+  if (Array.isArray(value)) {
+    return value.map(cleanForFirestore);
+  }
+
+  if (value !== null && typeof value === "object") {
+    const cleaned = {};
+
+    Object.entries(value).forEach(([key, val]) => {
+      if (val !== undefined) {
+        cleaned[key] = cleanForFirestore(val);
+      }
+    });
+
+    return cleaned;
+  }
+
+  return value;
+}
+
+// ===============================
+// 📦 Build payload
 // ===============================
 function buildCloudPayload() {
-  return {
+  const payload = {
     category: state.category,
     pools: state.pools,
     skipped: state.skipped,
@@ -43,8 +66,9 @@ function buildCloudPayload() {
     ui: state.ui,
     savedAt: new Date().toISOString()
   };
-}
 
+  return cleanForFirestore(payload);
+}
 
 // ===============================
 // ☁️ Save auction state
