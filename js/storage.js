@@ -37,11 +37,10 @@ export async function loadAuctionData() {
           id: player.id,
           name: player.name,
           position: player.position || '',
-          basePrice: player.basePrice ?? 0,
+          basePrice: player.basePrice,
           img: player.img || './players/defaultimage.jpg',
           soldPrice: player.soldPrice ?? null,
-          teamId: player.teamId ?? null,
-          unsoldCount: player.unsoldCount ?? 0
+          teamId: player.teamId ?? null
         });
       });
 
