@@ -49,22 +49,24 @@
     ],
     
   "B": [
-      { "id": "b1", "name": "Mr. Soumen Kumar Dey", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b2", "name": "Mr. Pronobendra Nath Moitra", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b3", "name": "Mr. Mounanil Pd Mitra", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b4", "name": "Mr. Sheo Shankar Chaturvedi", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b5", "name": "Mr. Anil Kumar Roy", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b6", "name": "Mr. Sidhartha Roy", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b7", "name": "Mr. Champak Bhattacharya", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b8", "name": "Mr. Pradip Mitra", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b9", "name": "Mr. Arup Roy", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b10", "name": "Mr. Biswanath Bhattacharjee", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b11", "name": "Mr. Amarnath Jha", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b12", "name": "Mr. B D Agarwal", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b13", "name": "Mr. Sarwesh Bhiwaniwala", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b14", "name": "Mr. Abhishek Chakraborty", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b15", "name": "Mr. Sarbajit Barick", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" },
-      { "id": "b16", "name": "Mr. Salil Mukherjee", "position": "PL", "basePrice": 20000, "img": "./players/defaultimage.jpg" }
+      { "id": "b1", "name": "Dipanjan Majumder", "position": "CB", "basePrice": 20000, "img": "./players/b_dipanjan.jpg" },
+      { "id": "b2", "name": "Hrishikesh", "position": "CM", "basePrice": 20000, "img": "./players/b_hrishi.jpg" },
+      { "id": "b3", "name": "Akash Mukherjee ", "position": "CM", "basePrice": 20000, "img": "./players/b_akashm.jpg" },
+      { "id": "b4", "name": "Priyanshu Das", "position": "CB", "basePrice": 20000, "img": "./players/b_priyanshu.jpg" },
+      { "id": "b5", "name": "Raja", "position": "ST", "basePrice": 20000, "img": "./players/b_raja.jpg" },
+      { "id": "b6", "name": "Rohan Khatri", "position": "CM", "basePrice": 20000, "img": "./players/b_rohank.jpg" },
+      { "id": "b7", "name": "Krishnendu Mondal ", "position": "CM", "basePrice": 20000, "img": "./players/b_krishnendu.jpg" },
+      { "id": "b8", "name": "Santu", "position": "CB", "basePrice": 20000, "img": "./players/b_santu.jpg" },
+      { "id": "b9", "name": "Santanu Purkait", "position": "CM", "basePrice": 20000, "img": "./players/b_santanu.jpg" },
+      { "id": "b10", "name": "Rohan Chaudhuri", "position": "CM", "basePrice": 20000, "img": "./players/b_rohanc.jpg" },
+      { "id": "b11", "name": "Sany", "position": "CB", "basePrice": 20000, "img": "./players/b_sany.jpg" },
+      { "id": "b12", "name": "Aritra Adhikari", "position": "ST", "basePrice": 20000, "img": "./players/b_aritra.jpg" },
+      { "id": "b13", "name": "Subhayan Banerjee", "position": "CB", "basePrice": 20000, "img": "./players/b_subhayan.jpg" },
+      { "id": "b14", "name": "Shubhanjan Basu", "position": "ST", "basePrice": 20000, "img": "./players/b_taton.jpg" },
+      { "id": "b15", "name": "Rajan Kumar Singh", "position": "ST", "basePrice": 20000, "img": "./players/b_rajan.jpg" },
+      { "id": "b16", "name": "Akash  Mondal", "position": "CM", "basePrice": 20000, "img": "./players/b_sourav.jpg" },
+      { "id": "b17", "name": "Kaustav Das", "position": "CB", "basePrice": 20000, "img": "./players/b_akashm.jpg" },
+      { "id": "b18", "name": "Sourav Acharjee", "position": "ST", "basePrice": 20000, "img": "./players/b_kaustav.jpg" }
     ]
   }
 }
