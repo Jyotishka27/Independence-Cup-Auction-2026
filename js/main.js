@@ -70,6 +70,7 @@ if (uploadBtn) {
         name: row.player_name?.trim(),
         pool: row.pool?.trim()?.toUpperCase(),
         basePrice: Number(row.base_price),
+        img: row.img?.trim() || ''
       }));
 
       const validPlayers = validatePlayers(players);
