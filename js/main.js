@@ -109,7 +109,7 @@ const downloadBtn = document.getElementById("downloadTemplate");
 
 if (downloadBtn) {
   downloadBtn.addEventListener("click", () => {
-    const csv = "player_name,pool,base_price\n";
+    const csv = "player_name,pool,base_price,img\n";
 
     const blob = new Blob([csv], { type: "text/csv" });
 
