@@ -1,4 +1,9 @@
-import { CATEGORY_LABELS, REDUCTION_FACTOR, MIN_PRICE } from './config.js';
+import {
+  CATEGORY_LABELS,
+  REDUCTION_FACTOR,
+  MIN_PRICE,
+  UNSOLD_FIXED_PRICE
+} from './config.js';
 import { dom } from './renderer.js';
 
 export function fmt(num) {
