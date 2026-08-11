@@ -207,53 +207,13 @@ if (uploadBtn) {
         // --------------------------------
         // Convert spreadsheet → players
         // --------------------------------
-        const players =
-          rows.map((row, index) => ({
-
-            // Preserve ID if supplied
-            id:
-              String(
-                row.id ||
-                row.player_id ||
-                `p_${index + 1}`
-              ).trim(),
-
-            // Player name
-            name:
-              String(
-                row.player_name ||
-                row.name ||
-                ""
-              ).trim(),
-
-            // Position
-            position:
-              String(
-                row.position ||
-                ""
-              ).trim(),
-
-            // Category
-            pool:
-              String(
-                row.pool ||
-                ""
-              ).trim()
-              .toUpperCase(),
-
-            // Base price
-            basePrice:
-              Number(
-                row.base_price
-              ),
-
-            // GitHub Pages image path
-            img:
-              String(
-                row.img ||
-                ""
-              ).trim()
-          }));
+        const players = rows.map((row) => ({
+          name: row.player_name?.trim(),
+          position: row.position?.trim() || '',
+          pool: row.pool?.trim()?.toUpperCase(),
+          basePrice: Number(row.base_price),
+          img: row.img?.trim() || ''
+        }));
 
 
         console.log(
