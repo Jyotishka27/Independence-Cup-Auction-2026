@@ -104,23 +104,18 @@ async function saveAuctionToCloud() {
 // Load complete auction state
 // ===============================
 async function loadAuctionFromCloud() {
-
   try {
-
     const snapshot = await getDoc(AUCTION_DOC);
 
     if (!snapshot.exists()) {
-
       console.log("No Firebase auction document found");
-
       return false;
     }
 
     const parsed = snapshot.data();
 
     Object.assign(state, {
-
-      category: parsed.category ?? "X",
+      category: parsed.category ?? state.category ?? "X",
 
       pools: parsed.pools ?? {
         X: [],
@@ -140,18 +135,19 @@ async function loadAuctionFromCloud() {
 
       current: parsed.current ?? null,
 
-      teams: parsed.teams ?? [],
+      // IMPORTANT:
+      // Do NOT replace teams loaded from auction-data.json
+      // with an empty Firebase array.
+      teams:
+        Array.isArray(parsed.teams) && parsed.teams.length > 0
+          ? parsed.teams
+          : state.teams,
 
       sales: parsed.sales ?? [],
 
       rules: parsed.rules ?? state.rules,
 
-      ui: parsed.ui ?? {
-        activeMainTab: "auction",
-        activeAdminTab: "budgets",
-        rightPanelTab: "budgets",
-        playerManagementEditMode: false
-      },
+      ui: parsed.ui ?? state.ui,
 
       timer: {
         handle: null,
@@ -161,13 +157,12 @@ async function loadAuctionFromCloud() {
     });
 
     console.log("✅ Firebase load successful");
+    console.log("Teams after Firebase load:", state.teams);
 
     return true;
 
   } catch (err) {
-
     console.error("❌ Firebase load failed:", err);
-
     return false;
   }
 }
