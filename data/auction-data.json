@@ -24,7 +24,7 @@
       { "id": "p3", "name": "Supratim Sengupta ", "position": "ST", "basePrice": 50000, "img": "./players/p_supratim.jpg" },
       { "id": "p4", "name": "Arjo", "position": "ST", "basePrice": 50000, "img": "./players/p_arjo.jpg" },
       { "id": "p5", "name": "Risove Show", "position": "CM", "basePrice": 40000, "img": "./players/p_rishov.jpg" },
-      { "id": "p6", "name": "Ayon Roy", "position": "CB", "basePrice": 40000, "img": "./players/p_shrey.jpg" },
+      { "id": "p6", "name": "Ayon Roy", "position": "CB", "basePrice": 40000, "img": "./players/p_aron.jpg" },
       { "id": "p7", "name": "Nilanjan Chowdhury", "position": "CM", "basePrice": 40000, "img": "./players/p_nilanjan.jpg" },
       { "id": "p8", "name": "Aniruddha Chakraborty", "position": "CM", "basePrice": 40000, "img": "./players/p_aniruddha.jpg" },
     ],
